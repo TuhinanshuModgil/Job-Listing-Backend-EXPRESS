@@ -7,12 +7,12 @@ import mongoose from 'mongoose'
 import jobRouter from "./routes/jobs.routes.js"
 import cors from "cors"
 
-import dotenv from 'dotenv'
+import dotenv from 'dotenv/config'
 
 
-dotenv.config({
-    path: './env'
-})
+// dotenv.config({
+//     path: './env'
+// })
 
 
 
