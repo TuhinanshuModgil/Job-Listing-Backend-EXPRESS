@@ -1,3 +1,6 @@
+// --------Read Me----------
+// created a schema or data model for the job postings
+
 import mongoose  from "mongoose";
 
 const jobSchema  = mongoose.Schema({

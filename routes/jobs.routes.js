@@ -1,3 +1,6 @@
+// --------Read Me----------
+// file to handle all the routes for jobs
+
 import express from "express"
 import { Job } from "../models/job.model.js";
 
