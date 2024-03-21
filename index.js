@@ -44,13 +44,14 @@ app.use(cors())
 
 
 // Just to check if process.env is working
-console.log(process.env.PORT)
+// console.log(process.env.PORT)
 
 
 // Just to return a welcome message when someone connects to the root path
 app.get('/', (req, res)=>{
 console.log(req)
-return res.status(234).send("Welcome Here")
+return res.status(234).send("Welcome To Job-Listing API. go to '/jobs' to access the job-listing data. Go to readme for more details")
+
 })
 
 

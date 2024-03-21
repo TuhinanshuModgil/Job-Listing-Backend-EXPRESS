@@ -67,6 +67,30 @@ router.get('/', async(req, res)=>{
     }
 })
 
+
+
+router.get('/tester', async(req, res)=>{
+
+    try {
+
+        
+
+        return res.status(200).send(
+            {
+
+                data: "Tester Endpoint"
+            }
+        )
+        
+    } catch (error) {
+        console.log(error.message)
+
+        return res.status(500).send({
+            message: error.message
+        })
+    }
+})
+
 // route for getting a single book by ID
 router.get('/:id', async(req, res)=>{
 
