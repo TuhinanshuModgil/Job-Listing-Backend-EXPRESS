@@ -1,3 +1,7 @@
+// -------------Read me----------------
+// This is the main file of the server that uses express to create the backend 
+// We have added middlewares and route handling using the express app
+
 
 import express from "express"
 import mongoose from 'mongoose'
@@ -10,6 +14,7 @@ import cors from "cors"
 import dotenv from 'dotenv/config'
 
 
+// This code was used to configure the dotenv file but due to the latest release with es6 compatibility we dont need this
 // dotenv.config({
 //     path: './env'
 // })
@@ -20,10 +25,16 @@ import dotenv from 'dotenv/config'
 
 const app = express()
 
+// middleware to parse any incoming JSON data 
 app.use(express.json())
 
-// allows all requests
+
+
+// allows all requests to the serve
+// In a professional we would define the address that could make the request to our server
 app.use(cors())
+
+
 
 // allows for custom addresses
 // app.use(cors({
@@ -31,18 +42,26 @@ app.use(cors())
 //     meathods: ['GET', 'PUT', 'POST', 'DELETE']
 // }))
 
+
+// Just to check if process.env is working
 console.log(process.env.PORT)
 
+
+// Just to return a welcome message when someone connects to the root path
 app.get('/', (req, res)=>{
 console.log(req)
 return res.status(234).send("Welcome Here")
 })
 
-// app.use('/books', bookRouter)
+
+// This tell that send the request comming to the /jobs path to the jobRouter
+// Go to job router file to see how the requests are handled
 app.use('/jobs', jobRouter)
 
 
 
+// Here we use mongoose to connect to our database 
+// once that is completed we finally start listening to the requests on our server
 mongoose
     .connect(process.env.DATABASE_URL)
     .then(()=>{
