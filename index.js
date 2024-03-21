@@ -70,8 +70,6 @@ mongoose
     app.listen(process.env.PORT||7000, ()=>{
         console.log(`server running at ${process.env.PORT||7000}`)
     })
-
-
     })
     .catch((err)=>{
     console.log(err)
